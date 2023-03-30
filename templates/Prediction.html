@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Image Classification</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Elsie&family=Source+Serif+Pro:wght@300&display=swap');
+
+.body{
+  margin: 0px auto 0px auto;
+  max-width: 1150px;  
+  min-width: 1140px;
+}
+.container{
+  display: inline-block;
+  position: relative;
+  background-repeat: no-repeat;
+  background-image: url('/static/890814-forest-trees-nature-landscape-tree-autumn.jpg');
+  background-size: 100% 110%;
+  width: 100%;
+  height: 850px;
+  padding: 0%;
+}
+
+h1{
+  font-family: 'EB Garamond', serif;
+  color:   rgb(112, 24, 4);
+  font-size: 40px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 5%;
+}
+
+h2{
+  font-family: 'EB Garamond', serif;
+  color: rgb(112, 24, 4);
+  font-size: 40px;
+  margin-left: 5%;
+}
+
+#Up_Hd{
+  font-family: 'EB Garamond', serif;
+  color:  white;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+  margin-left: 8%;
+}
+
+.form-control{
+  width: 82%;
+  margin-left: 8%;
+}
+
+.Btn{
+  margin-left: 8%;
+}
+
+.btn-success{
+  font-family: 'EB Garamond', serif;
+  font-size: 20px;
+  font-weight: bolder;
+  background-color: rgb(112, 24, 4);
+  border-color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.Predicted_Data{
+  margin-left: 8%;
+  margin-right: 10%;
+  margin-top: 2%;
+}
+.column {
+  float: left;
+  width: 50%;
+  height: 500px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255, 0.9);
+}
+
+img{
+  margin-left: 5%;
+}
+
+  </style>
+</head>
+
+
+<body>
+<div class="container">
+  <h1>FIRE AND NON FIRE MODEL PREDICTION</h1>
+  <br><br>
+  <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+    <div>
+      <label id="Up_Hd" for="pwd">Upload Image For Prediction:</label>
+      <div>          
+        <br>
+        <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+      </div>
+    </div>
+
+    <div>        
+      <div class="Btn">
+        <br>
+        <button type="submit" class="btn btn-success">SUBMIT</button>
+      </div>
+    </div>
+  </form>
+  
+  <div class="Predicted_Data"> 
+  {% if prediction %}
+    <div class="column">
+      <br><br>
+      <img src="{{img_path}}" height="400px" width="400px" >
+    </div>
+    <div class="column">
+      <h2 style="margin-top:50%; color: rgb(112, 24, 4);">Prediction = {{prediction}} Detected</h2>
+    </div>
+	{% endif %}
+   </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
