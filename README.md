@@ -5,6 +5,7 @@ Requirements to Run the code:
 -> Install Visual Studio Code
 -> Install Flask
 -> Install Python Librairies 
+-> Install tensorflow / keras librairies
 
  To Run: 
  write command: python App.py
