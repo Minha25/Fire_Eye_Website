@@ -1,4 +1,13 @@
 # Fire_Eye_Website
-We developed this website using Flask framework.
+We developed this website using Python Flask framework. 
 
-Click here to visit website:  https://minha25.github.io/Fire_Eye_Website/template/index.html
+Requirements to Run the code:
+-> Install Visual Studio Code
+-> Install Flask
+-> Install Python Librairies 
+
+ To Run: 
+ write command: python App.py
+ 
+
+
